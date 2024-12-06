@@ -36,6 +36,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application code
 COPY . .
 
+# Install Composer dependencies
+RUN composer install --no-dev --optimize-autoloader
+
 # Set permissions
 RUN chown -R www-data:www-data /usr/src/app/backend
 
