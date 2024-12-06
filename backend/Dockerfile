@@ -2,7 +2,7 @@
 FROM php:8.2-fpm
 
 # Set working directory
-WORKDIR /usr/src/app/backend
+WORKDIR /usr/src/app
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -40,7 +40,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Set permissions
-RUN chown -R www-data:www-data /usr/src/app/backend
+RUN chown -R www-data:www-data /usr/src/app
 
 # Expose port 8000
 EXPOSE 8000
