@@ -14,3 +14,7 @@ cd /usr/src/app/backend
 
 # Run migrations and set application key
 php artisan key:generate
+
+php artisan config:clear
+php artisan cache:clear
+php artisan queue:clear
