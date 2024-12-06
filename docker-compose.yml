@@ -19,7 +19,7 @@ services:
       - app_network
     command: >
       sh -c "
-      php artisan key:generate
+      php artisan key:generate"
 
   frontend:
     build:
