@@ -12,12 +12,14 @@ services:
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
-      - APP_KEY
       - API_URL=http://localhost:8000
-    # volumes:
-    #   - ./backend:/usr/src/app/backend
+    volumes:
+      - ./backend:/usr/src/app/backend
     networks:
       - app_network
+    command: >
+      sh -c "
+      php artisan key:generate
 
   frontend:
     build:
