@@ -14,6 +14,8 @@ services:
       - APP_DEBUG=true
       - APP_KEY=base64:21YAyFkPq986LB7J7MarKLyhdoxkYwtrszYLVR+Ne44=  #This isn't supposed to be here, I just have errors and not enought time to fix it
       - API_URL=http://localhost:8000
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/usr/src/app/backend/database/database.sqlite
     volumes:
       - ./backend:/usr/src/app/backend
     networks:

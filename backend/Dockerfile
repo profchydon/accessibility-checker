@@ -36,8 +36,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application code
 COPY . .
 
-COPY ./database /usr/src/app/database
-
 # Install Composer dependencies
 RUN composer install --no-dev --optimize-autoloader
 
