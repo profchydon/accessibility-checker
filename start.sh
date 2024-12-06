@@ -4,4 +4,5 @@
 cd "$(dirname "$0")"
 
 # Start Docker Compose
-docker-compose up
+docker down
+docker-compose up --build
