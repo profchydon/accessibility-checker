@@ -2,7 +2,7 @@
 FROM php:8.2-fpm
 
 # Set working directory
-WORKDIR /usr/src/app/backend
+WORKDIR /usr/src/app/app-backend
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -33,13 +33,13 @@ RUN docker-php-ext-install mbstring exif pcntl bcmath gd
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN composer install
+# RUN composer install
 
 # Copy existing application code
 COPY . .
 
 # Set permissions
-RUN chown -R www-data:www-data /usr/src/app/backend
+RUN chown -R www-data:www-data /usr/src/app/app-backend
 
 # Expose port 8000
 EXPOSE 8000
