@@ -13,9 +13,9 @@ services:
       - APP_ENV=local
       - APP_DEBUG=true
       - APP_KEY
-      - API_URL=http://backend:8000
+      - API_URL=http://localhost:8000
     volumes:
-      - ./backend:/usr/src/app/backend
+      - ./backend:/usr/src/app/app-backend
     networks:
       - app_network
 
@@ -29,7 +29,7 @@ services:
       - 3000:3000
     environment:
       - NEXT_NODE_ENV=development
-      - NEXT_API_URL=http://backend:8000
+      - NEXT_API_URL=http://localhost:8000
     # volumes:
     #   - ./frontend:/usr/src/app/frontend
     networks:
