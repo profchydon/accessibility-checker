@@ -39,9 +39,6 @@ COPY . .
 # Install Composer dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Generate Laravel application key
-RUN php artisan key:generate
-
 # Set permissions
 RUN chown -R www-data:www-data /usr/src/app
 
